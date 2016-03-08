@@ -5,7 +5,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-
     FirefoxDriver wd;
     private SessionHelper sessionHelper;
     private ContactHelper contactHelper;
@@ -30,9 +29,6 @@ public class ApplicationManager {
         wd.quit();
     }
 
-    public GroupHelper getGroupHelper() {
-        return groupHelper;
-    }
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
@@ -40,5 +36,9 @@ public class ApplicationManager {
 
     public ContactHelper getContactHelper() {
         return contactHelper;
+    }
+
+    public GroupHelper getGroupHelper() {
+        return groupHelper;
     }
 }
