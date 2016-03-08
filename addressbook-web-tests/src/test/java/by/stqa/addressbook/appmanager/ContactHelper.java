@@ -1,6 +1,8 @@
 package by.stqa.addressbook.appmanager;
 
 
+import by.stqa.addressbook.model.ContactData;
+import by.stqa.addressbook.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -18,13 +20,13 @@ public class ContactHelper extends HelperBase {
         click(By.xpath("//div[@id='content']/form/input[21]"));
     }
 
-    public void fillContactForm(String firstname, String lastname, String company, String address, String email, String notes) {
-        type(By.name("firstname"), firstname);
-        type(By.name("lastname"), lastname);
-        type(By.name("company"), company);
-        type(By.name("address"), address);
-        type(By.name("email"), email);
-        type(By.name("notes"), notes);
+    public void fillContactForm(ContactData contactData) {
+        type(By.name("firstname"), contactData.getFirstname());
+        type(By.name("lastname"), contactData.getLastname());
+        type(By.name("company"), contactData.getCompany());
+        type(By.name("address"), contactData.getAddress());
+        type(By.name("email"), contactData.getEmail());
+        type(By.name("notes"), contactData.getNotes());
 
     }
 }
