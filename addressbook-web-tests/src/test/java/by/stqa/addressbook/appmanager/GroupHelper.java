@@ -31,11 +31,11 @@ public class GroupHelper extends HelperBase {
     }
 
     public void deleteSelectedGroups() {
-        click (By.name("delete"));
+        click(By.name("delete"));
     }
 
     public void selectGroup() {
-        click (By.name("selected[]"));
+        click(By.name("selected[]"));
     }
 
     public void initGroupModification() {

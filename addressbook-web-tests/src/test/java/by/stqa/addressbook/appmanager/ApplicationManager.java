@@ -23,16 +23,16 @@ public class ApplicationManager {
 
 
     public void init() {
-        if (browser.equals (BrowserType.FIREFOX)){
+        if (browser.equals(BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
-        } else if(browser.equals (BrowserType.CHROME)){
+        } else if (browser.equals(BrowserType.CHROME)) {
             wd = new ChromeDriver();
-        } else if (browser.equals (BrowserType.SAFARI)){
+        } else if (browser.equals(BrowserType.SAFARI)) {
             wd = new SafariDriver();
-        } else if (browser.equals (BrowserType.IE)){
+        } else if (browser.equals(BrowserType.IE)) {
             wd = new InternetExplorerDriver();
         }
-        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         wd.get("http://localhost/addressbook/index.php");
         groupHelper = new GroupHelper(wd);
         navigationHelper = new NavigationHelper(wd);
@@ -40,7 +40,6 @@ public class ApplicationManager {
         sessionHelper = new SessionHelper(wd);
         sessionHelper.login("admin", "secret");
     }
-
 
 
     public void stop() {
