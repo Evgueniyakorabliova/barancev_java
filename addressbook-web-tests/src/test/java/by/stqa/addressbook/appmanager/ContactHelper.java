@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.reporters.jq.NavigatorPanel;
 
 public class ContactHelper extends HelperBase {
 
@@ -54,5 +55,16 @@ public class ContactHelper extends HelperBase {
 
     public void submitContactModification() {
         click(By.name("update"));
+    }
+
+    public void createContact(ContactData contact) {
+        fillContactForm (contact, true);
+        submitContactCreation();
+        returntoHomePage();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
+
     }
 }
